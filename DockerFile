@@ -1,15 +1,7 @@
-# Dockerfile
 FROM node:18
-
-# Cria diretório de trabalho dentro do container
 WORKDIR /app
-
-# Copia os arquivos para dentro do container
 COPY package*.json ./
 RUN npm install
-
 COPY . .
-
 EXPOSE 3000
-
 CMD ["node", "index.js"]
